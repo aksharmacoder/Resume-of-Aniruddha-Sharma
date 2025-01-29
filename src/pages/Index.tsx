@@ -3,11 +3,14 @@ import { Books } from "@/components/Books";
 import { ContactForm } from "@/components/ContactForm";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Services } from "@/components/Services";
+import { Education3D } from "@/components/Education3D";
+import { Skills3D } from "@/components/Skills3D";
 
 const Index = () => {
   return (
     <div className="min-h-screen cursor-none bg-gradient-to-b from-navy via-[#0A192F] to-[#0A1222]">
       <CustomCursor />
+      
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 opacity-50">
@@ -40,42 +43,72 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      {/* Services Section */}
-      <Services />
-      
-      {/* Expertise Section */}
-      <section className="py-16 relative overflow-hidden" id="expertise">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_var(--tw-gradient-stops))] from-electricBlue/5 to-transparent"></div>
+
+      {/* Skills Section */}
+      <section className="py-16 relative overflow-hidden" id="skills">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_var(--tw-gradient-stops))] from-electricBlue/5 to-transparent"></div>
         <div className="container relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">Professional Expertise</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Skills & Expertise</h2>
+          <div className="relative mb-12">
+            <Skills3D />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              {
-                title: "Web Development & Design",
-                description: "Creating responsive, secure websites that meet both legal compliance and user experience requirements."
-              },
-              {
-                title: "Content Creation & Strategy",
-                description: "Developing content that combines technical accuracy with engaging storytelling."
-              },
-              {
-                title: "Digital Security & Compliance",
-                description: "Implementing robust digital solutions with a strong focus on cybersecurity and data protection."
-              },
-              {
-                title: "Technical Innovation",
-                description: "Leveraging AI and blockchain technologies to create cutting-edge digital solutions."
-              }
-            ].map((service) => (
-              <div key={service.title} className="p-6 bg-navy/50 backdrop-blur-sm rounded-lg shadow-lg border border-electricBlue/20 hover:border-electricBlue/50 transition-all duration-300 hover:transform hover:scale-105">
-                <h3 className="text-xl font-bold mb-4 text-electricBlue">{service.title}</h3>
-                <p className="text-gray-300">{service.description}</p>
+              "Python", "SQL", "Kali Linux", "Web Development", "Web3", "SEO",
+              "Adobe", "Microsoft Office", "Cyber Security", "Account Management",
+              "Legal Drafting", "Content Creation", "Writing", "Graphic Design",
+              "Audio Remixing", "Video Editing", "Content Management",
+              "Website Design", "Google Adsense", "Google Ads", "Google Console",
+              "Bing Webmaster", "Canva", "Social Media Management"
+            ].map((skill) => (
+              <div
+                key={skill}
+                className="p-4 bg-navy/30 backdrop-blur-sm rounded-lg border border-electricBlue/20 
+                          hover:border-electricBlue/50 transition-all duration-300 
+                          hover:transform hover:scale-105 text-center"
+              >
+                <span className="text-electricBlue font-medium">{skill}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Education Section */}
+      <section className="py-16 relative overflow-hidden" id="education">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,_var(--tw-gradient-stops))] from-electricBlue/5 to-transparent"></div>
+        <div className="container relative z-10">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Education</h2>
+          <div className="relative mb-12">
+            <Education3D />
+          </div>
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <div className="bg-navy/30 backdrop-blur-sm rounded-lg p-6 border border-electricBlue/20 
+                          hover:border-electricBlue/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-electricBlue mb-2">Manipur University</h3>
+              <p className="text-white mb-1">BALLB - Law graduation with honors in cyber law and business law</p>
+              <p className="text-gray-400">2020</p>
+            </div>
+            
+            <div className="bg-navy/30 backdrop-blur-sm rounded-lg p-6 border border-electricBlue/20 
+                          hover:border-electricBlue/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-electricBlue mb-2">KC Das Commerce College</h3>
+              <p className="text-white mb-1">Higher Secondary with Commerce Stream</p>
+              <p className="text-gray-400">2015</p>
+            </div>
+            
+            <div className="bg-navy/30 backdrop-blur-sm rounded-lg p-6 border border-electricBlue/20 
+                          hover:border-electricBlue/50 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-electricBlue mb-2">Jawahar Navodaya Vidyalaya</h3>
+              <p className="text-white mb-1">Secondary with Science</p>
+              <p className="text-gray-400">2013</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Section */}
+      <Services />
       
       {/* Books Section */}
       <Books />
